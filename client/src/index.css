@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #555 #1a1a1a;
+  }
+  *::-webkit-scrollbar { width: 8px; height: 8px; }
+  *::-webkit-scrollbar-track { background: #1a1a1a; }
+  *::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
+  *::-webkit-scrollbar-thumb:hover { background: #777; }
+
+  body {
+    @apply bg-cat-dark text-cat-text min-h-screen;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  input, textarea, select {
+    @apply bg-cat-card border border-cat-border rounded-lg px-3 py-2 text-cat-text;
+    @apply focus:outline-none focus:border-cat-accent transition-colors;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-cat-accent hover:bg-cat-accentHover text-white font-semibold px-4 py-2 rounded-lg;
+  }
+  .btn-secondary {
+    @apply bg-cat-card hover:bg-cat-hover text-cat-text border border-cat-border px-4 py-2 rounded-lg;
+  }
+  .btn-danger {
+    @apply bg-cat-danger hover:bg-red-600 text-white px-4 py-2 rounded-lg;
+  }
+  .card {
+    @apply bg-cat-card rounded-xl border border-cat-border;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-premium {
+    @apply badge bg-yellow-900/50 text-cat-premium border border-cat-premium/30;
+  }
+  .badge-admin {
+    @apply badge bg-red-900/50 text-red-400 border border-red-400/30;
+  }
+  .badge-creator {
+    @apply badge bg-blue-900/50 text-blue-400 border border-blue-400/30;
+  }
+}
